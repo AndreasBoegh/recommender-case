@@ -6,6 +6,8 @@ __pycache__/
 
 # C extensions
 *.so
+data/preprocessed_data
+data/model_output.json
 
 # Distribution / packaging
 .Python

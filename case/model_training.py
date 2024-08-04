@@ -31,4 +31,4 @@ def main():
         discount_rate=0.01,
     )
 
-    print(df.sort_values("cltv_one_year", ascending=False).head())
+    df.to_json("./data/model_output.json", orient="records")

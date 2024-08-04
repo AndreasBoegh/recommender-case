@@ -2,8 +2,8 @@ from pyspark.sql import functions as F
 from pyspark.sql import DataFrame
 
 
-def outlier_thresholds(df: DataFrame, variable):
-    quantiles = df.approxQuantile(variable, [0.01, 0.99], 0.0)
+def outlier_thresholds(df: DataFrame, variable, probabilities=[0.01, 0.99]):
+    quantiles = df.approxQuantile(variable, probabilities, 0.0)
     quartile1, quartile3 = quantiles
     interquantile_range = quartile3 - quartile1
     up_limit = quartile3 + 1.5 * interquantile_range
