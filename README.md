@@ -1,12 +1,25 @@
 # Case study 
 
+## To run the code in VS Code
+
+1. Reopen in devcontainer
+2. Run command: 
+
+```bash
+export PYTHONPATH="${PYTHONPATH}:./case"
+```
+
+3. poetry run python3 main.py
+
+This will run the test, then preprocessing and then model training. The data will be output in data directory.
+
 Given a notebook running a CLTV model how can this code be restructured to be more ready for production?
 
 ## Problems identified in the notebook
 
 The notebook depends alot on Pandas which, if we are going to run this notebook on a lot of data will potentially give us problems. Pandas in itself does not distribute computing in the same way that spark does for instance. This means that we can run into a scenario where there is too much data to run part of the notebook.
 
-The notebook only lives in the data scientists environment with no "scaffolding" around it. This means that it might run on the machine of the data scientist but not necessarily anywhere else. None of the versions of pypi packaged are fixed, so it could also break at any time if a package is updated (breaking change).
+The notebook only lives in the data scientists environment with no "scaffolding" around it. This means that it might run on the machine of the data scientist but not necessarily anywhere else easily. None of the versions of pypi packaged are fixed, so it could also break at any time if a package is updated (breaking change).
 
 ## New structure
 
