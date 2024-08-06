@@ -3,13 +3,17 @@
 ## To run the code in VS Code
 
 1. Reopen in devcontainer
-2. Run command: 
+2. export path: 
 
 ```bash
 export PYTHONPATH="${PYTHONPATH}:./case"
 ```
 
-3. poetry run python3 main.py
+3. run main.py
+   
+```bash
+poetry run python3 main.py
+```
 
 This will run the test, then preprocessing and then model training. The data will be output in data directory.
 
